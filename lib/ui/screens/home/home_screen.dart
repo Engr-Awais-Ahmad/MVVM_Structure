@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               child: Container(
                 height: 100,
                 width: 100,
-                color: model.isSelect ? Colors.green : Colors.blue,
+                color: model.isSelect ? greenColor : blackColor,
               ),
             ),
           ),
