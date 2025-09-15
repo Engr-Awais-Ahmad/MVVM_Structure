@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
+// ignore: must_be_immutable, camel_case_types
 class selectBox extends StatelessWidget {
   VoidCallback? onTap;
   Color? color;

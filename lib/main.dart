@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
 // ignore: unused_import
 import 'package:mvvm_app/ui/screens/home/home_screen.dart';
 import 'package:mvvm_app/ui/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ScreenUtilInit(
+      designSize: Size(375, 812),
+      builder: (context, child) => MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
