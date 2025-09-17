@@ -9,8 +9,8 @@ import 'package:mvvm_app/ui/custom_widgets/buttons/social_button.dart';
 import 'package:mvvm_app/ui/screens/auth/login/login_view_model.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class Login2Screen extends StatelessWidget {
+  const Login2Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +32,9 @@ class LoginScreen extends StatelessWidget {
                 children: <Widget>[
                   Image.asset("$staticAssets/app_logo.png", scale: 6),
                   30.verticalSpace,
-                  Text("Create Account", style: style30),
+                  Text("Welcome Back", style: style30),
+                  Text("Login to Continue!", style: style12),
                   50.verticalSpace,
-                  TextFormField(
-                    style: style16,
-                    decoration: authFieldDecoration.copyWith(
-                      labelText: "Full Name",
-                      suffixIcon: Image.asset(
-                        "$iconAssets/tick-circle.png",
-                        scale: 4,
-                      ),
-                      prefixIcon: Image.asset("$iconAssets/user.png", scale: 4),
-                    ),
-                  ),
-                  30.verticalSpace,
 
                   ///
                   /// Email
@@ -88,16 +77,25 @@ class LoginScreen extends StatelessWidget {
                       prefixIcon: Image.asset("$iconAssets/lock.png", scale: 4),
                     ),
                   ),
+                  Text("Forget Password?", style: style12),
                   30.verticalSpace,
 
                   ///
                   /// Custom Button
                   ///
                   CustomButton(
-                    text: "Create New Account",
+                    text: "Login",
                     onTap: () {},
                     boxColor: greenColor,
                     textColor: whiteColor,
+                  ),
+                  30.verticalSpace,
+
+                  CustomButton(
+                    text: "Create New Account",
+                    onTap: () {},
+                    boxColor: Colors.black,
+                    textColor: greenColor,
                   ),
                   30.verticalSpace,
 
@@ -143,13 +141,6 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ),
-                  30.verticalSpace,
-                  Center(
-                    child: Text(
-                      "Already Have Account",
-                      style: style16.copyWith(color: greenColor),
-                    ),
                   ),
                 ],
               ),
