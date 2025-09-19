@@ -77,7 +77,10 @@ class Login2Screen extends StatelessWidget {
                       prefixIcon: Image.asset("$iconAssets/lock.png", scale: 4),
                     ),
                   ),
-                  Text("Forget Password?", style: style12),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Text("Forget Password?", style: style12),
+                  ),
                   30.verticalSpace,
 
                   ///

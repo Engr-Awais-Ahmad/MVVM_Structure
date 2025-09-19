@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:mvvm_app/core/constant/strings.dart';
 import 'package:mvvm_app/ui/screens/auth/login/login_screen.dart';
+import 'package:mvvm_app/ui/screens/onboarding_screen/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +18,9 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => LoginScreen()), // your next screen
+        MaterialPageRoute(
+          builder: (_) => OnbaordingScreen(),
+        ), // your next screen
       );
     });
   }
