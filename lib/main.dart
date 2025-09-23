@@ -4,8 +4,7 @@ import 'package:mvvm_app/core/constant/colors.dart';
 import 'package:mvvm_app/ui/screens/auth/forget_password_otp/forget_password_otp.dart';
 import 'package:mvvm_app/ui/screens/auth/login2/login2_screen.dart.dart';
 import 'package:mvvm_app/ui/screens/auth/verify_otp/verify_otp_screen.dart';
-// ignore: unused_import
-import 'package:mvvm_app/ui/screens/home/home_screen.dart';
+import 'package:mvvm_app/ui/screens/root_screen.dart';
 import 'package:mvvm_app/ui/screens/splash_screen.dart';
 import 'package:mvvm_app/ui/screens/subscription/plans/subscription_plans_screen.dart';
 
@@ -46,7 +45,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SubscriptionPlansScreen(),
+      home: RootScreen(),
     );
   }
 }
