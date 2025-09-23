@@ -7,6 +7,7 @@ import 'package:mvvm_app/ui/screens/auth/verify_otp/verify_otp_screen.dart';
 // ignore: unused_import
 import 'package:mvvm_app/ui/screens/home/home_screen.dart';
 import 'package:mvvm_app/ui/screens/splash_screen.dart';
+import 'package:mvvm_app/ui/screens/subscription/plans/subscription_plans_screen.dart';
 
 void main() {
   runApp(
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: SubscriptionPlansScreen(),
     );
   }
 }

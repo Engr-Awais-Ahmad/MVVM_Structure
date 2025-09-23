@@ -37,7 +37,7 @@ class OnbaordingScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                        vertical: 60,
+                        vertical: 59,
                         horizontal: 20,
                       ),
                       child: TextButton(
