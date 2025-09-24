@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
 import 'package:mvvm_app/core/constant/strings.dart';
-import 'package:mvvm_app/ui/screens/home_screen_view_model.dart';
+import 'package:mvvm_app/core/constant/text_style.dart';
+import 'package:mvvm_app/ui/custom_widgets/buttons/custom_button.dart';
+import 'package:mvvm_app/ui/screens/home_screen/home_screen_view_model.dart';
 import 'package:provider/provider.dart';
+import 'package:video_player/video_player.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,21 +15,27 @@ class HomeScreen extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => HomeScreenViewModel(),
       child: Consumer<HomeScreenViewModel>(
-        builder: (context, homeVM, _) {
+        builder: (context, Value, _) {
           return Scaffold(
             body: Stack(
               children: [
-                // Background image
+                /// ✅ Background Video
                 Positioned.fill(
-                  child: Image.asset(
-                    "$staticAssets/homescreenman.png",
-                    fit: BoxFit.cover,
-                  ),
+                  child: Value.isVideoInitialized
+                      ? FittedBox(
+                          fit: BoxFit.cover,
+                          child: SizedBox(
+                            width: Value.videoController.value.size.width,
+                            height: Value.videoController.value.size.height,
+                            child: VideoPlayer(Value.videoController),
+                          ),
+                        )
+                      : const Center(child: CircularProgressIndicator()),
                 ),
 
+                /// ✅ Foreground UI (Buttons, Text, Icons, etc.)
                 Column(
                   children: [
-                    // 🔹 Top Bar (Logo + Icons)
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 12,
@@ -49,49 +58,39 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
-                    // 🔹 Tabs SAVO Kids & Senior
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 10,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text("SAVO Kids"),
-                          ),
-                        ),
-                        SizedBox(width: 12),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 10,
-                            ),
-                            decoration: BoxDecoration(
-                              color: whiteColor,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: const Text(
-                              "SAVO Senior",
-                              style: TextStyle(color: blackColor),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: CustomButton(
+                              text: "SAVO Kids",
+                              onTap: () => Value.tabSelected(0),
+                              boxColor: Value.selectedTabIndex == 0
+                                  ? greenColor
+                                  : whiteColor,
+                              textColor: Value.selectedTabIndex == 0
+                                  ? whiteColor
+                                  : blackColor,
                             ),
                           ),
-                        ),
-                      ],
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: CustomButton(
+                              text: "SAVO Senior",
+                              onTap: () => Value.tabSelected(1),
+                              boxColor: Value.selectedTabIndex == 1
+                                  ? greenColor
+                                  : whiteColor,
+                              textColor: Value.selectedTabIndex == 1
+                                  ? whiteColor
+                                  : blackColor,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-
                     const SizedBox(height: 20),
-
-                    // 🔹 Middle Content (Title + Subtitle + Author)
                     Expanded(
                       child: Stack(
                         children: [
@@ -105,22 +104,21 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     "529 College Savings Plan vs. Annuities",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
+                                    style: style12.copyWith(
                                       color: whiteColor,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  SizedBox(height: 6),
-                                  Text(
+                                  const SizedBox(height: 6),
+                                  const Text(
                                     "What plan will work best for your child’s tuition.",
-                                    style: TextStyle(color: whiteColor),
+                                    style: TextStyle(color: Colors.white),
                                   ),
-                                  SizedBox(height: 6),
-                                  Text(
+                                  const SizedBox(height: 6),
+                                  const Text(
                                     "Jonathon Doe · 3 days ago",
                                     style: TextStyle(color: Colors.grey),
                                   ),
@@ -128,8 +126,6 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-
-                          // 🔹 Right Side Column (Avatar + Buttons)
                           Align(
                             alignment: Alignment.bottomRight,
                             child: Padding(
@@ -140,30 +136,27 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  CircleAvatar(
+                                  const CircleAvatar(
                                     radius: 30,
                                     backgroundImage: AssetImage(
                                       "$staticAssets/avatar.png",
                                     ),
                                   ),
-                                  SizedBox(height: 16),
+                                  const SizedBox(height: 16),
                                   GestureDetector(
-                                    onTap: homeVM.toggleLike,
+                                    onTap: Value.like,
                                     child: Icon(
                                       Icons.favorite,
-                                      color: homeVM.isLiked
+                                      color: Value.isLiked
                                           ? Colors.red
                                           : whiteColor,
                                       size: 32,
                                     ),
                                   ),
                                   const SizedBox(height: 8),
-                                  const Text(
+                                  Text(
                                     "12k",
-                                    style: TextStyle(
-                                      color: whiteColor,
-                                      fontSize: 12,
-                                    ),
+                                    style: style12.copyWith(color: whiteColor),
                                   ),
                                   const SizedBox(height: 16),
                                   const Icon(
@@ -172,12 +165,9 @@ class HomeScreen extends StatelessWidget {
                                     size: 32,
                                   ),
                                   const SizedBox(height: 8),
-                                  const Text(
+                                  Text(
                                     "786",
-                                    style: TextStyle(
-                                      color: whiteColor,
-                                      fontSize: 12,
-                                    ),
+                                    style: style12.copyWith(color: whiteColor),
                                   ),
                                   const SizedBox(height: 16),
                                   const Icon(

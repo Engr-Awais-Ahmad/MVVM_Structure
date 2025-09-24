@@ -6,6 +6,7 @@ const Color lightGreenColor = Color(0xff02C778);
 const Color whiteColor = Color(0xffFAFFFD);
 const Color greyColor = Color(0xff737B80);
 const Color lightBlack = Color(0xff23262C);
+const Color blurTransparent = Color(0xff23262C80);
 LinearGradient linearGradient = const LinearGradient(
   colors: [greenColor, lightGreenColor],
 );
