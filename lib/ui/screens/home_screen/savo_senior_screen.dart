@@ -104,7 +104,7 @@ class SavoSeniorScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "Senior Investment Insights 💼",
+                                    "Helping seniors during times of inflation",
                                     style: style12.copyWith(
                                       color: whiteColor,
                                       fontWeight: FontWeight.bold,
@@ -112,7 +112,7 @@ class SavoSeniorScreen extends StatelessWidget {
                                   ),
                                   SizedBox(height: 6),
                                   Text(
-                                    "Learn strategies and tips for senior investors.",
+                                    "Inflation is eating away at the incomes of seniors. .Read More",
                                     style: TextStyle(color: Colors.white),
                                   ),
                                   SizedBox(height: 6),

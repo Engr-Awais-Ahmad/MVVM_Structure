@@ -8,6 +8,7 @@ import 'package:mvvm_app/ui/screens/help_screen/help_screen.dart';
 import 'package:mvvm_app/ui/screens/home_screen/home_screen.dart';
 import 'package:mvvm_app/ui/screens/home_screen/home_screen_view_model.dart';
 import 'package:mvvm_app/ui/screens/home_screen/savo_kids_screen.dart';
+import 'package:mvvm_app/ui/screens/home_screen/savo_senior_screen.dart';
 import 'package:mvvm_app/ui/screens/root_screen/root_screen.dart';
 import 'package:mvvm_app/ui/screens/splash_screen.dart';
 import 'package:mvvm_app/ui/screens/subscription/plans/subscription_plans_screen.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SavoKidsScreen(),
+      home: SavoSeniorScreen(),
     );
   }
 }
