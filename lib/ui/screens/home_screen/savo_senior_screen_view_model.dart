@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class SavoKidsScreenViewModel extends ChangeNotifier {
+class SavoSeniorScreenViewModel extends ChangeNotifier {
   bool isLiked = false;
   int selectedTabIndex = 0;
 
   late VideoPlayerController videoController;
   bool isVideoInitialized = false;
 
-  SavoKidsScreenViewModel() {
+  SavoSeniorScreenViewModel() {
     initVideo();
   }
 
-  /// Initialize video from URL
+  /// Initialize senior-related video
   Future<void> initVideo() async {
     videoController = VideoPlayerController.networkUrl(
       Uri.parse(
-        "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4",
+        "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4", // ✅ Replace with senior-related video URL
       ),
     );
 

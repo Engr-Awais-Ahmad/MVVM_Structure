@@ -7,8 +7,8 @@ import 'package:mvvm_app/ui/screens/home_screen/home_screen_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class SavoKidsScreen extends StatelessWidget {
+  SavoKidsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,14 @@ class HomeScreen extends StatelessWidget {
                             child: VideoPlayer(value.videoController),
                           ),
                         )
-                      : const Center(child: CircularProgressIndicator()),
+                      : Center(child: CircularProgressIndicator()),
                 ),
 
+                /// ✅ SAME UI AS HOMESCREEN
                 Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         horizontal: 12,
                         vertical: 20,
                       ),
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                                 "$iconAssets/search-icon.png",
                                 height: 28,
                               ),
-                              const SizedBox(width: 12),
+                              SizedBox(width: 12),
                               Image.asset("$iconAssets/menu.png", height: 28),
                             ],
                           ),
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
                         children: [
                           Expanded(
@@ -73,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                                   : blackColor,
                             ),
                           ),
-                          const SizedBox(width: 12),
+                          SizedBox(width: 12),
                           Expanded(
                             child: CustomButton(
                               text: "SAVO Senior",
@@ -89,17 +90,14 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     Expanded(
                       child: Stack(
                         children: [
                           Align(
                             alignment: Alignment.bottomLeft,
                             child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 16,
-                                bottom: 40,
-                              ),
+                              padding: EdgeInsets.only(left: 16, bottom: 40),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,13 +109,13 @@ class HomeScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 6),
-                                  const Text(
+                                  SizedBox(height: 6),
+                                  Text(
                                     "What plan will work best for your child’s tuition.",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  const SizedBox(height: 6),
-                                  const Text(
+                                  SizedBox(height: 6),
+                                  Text(
                                     "Jonathon Doe · 3 days ago",
                                     style: TextStyle(color: Colors.grey),
                                   ),
@@ -128,20 +126,17 @@ class HomeScreen extends StatelessWidget {
                           Align(
                             alignment: Alignment.bottomRight,
                             child: Padding(
-                              padding: const EdgeInsets.only(
-                                right: 16,
-                                bottom: 40,
-                              ),
+                              padding: EdgeInsets.only(right: 16, bottom: 40),
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  const CircleAvatar(
+                                  CircleAvatar(
                                     radius: 30,
                                     backgroundImage: AssetImage(
                                       "$staticAssets/avatar.png",
                                     ),
                                   ),
-                                  const SizedBox(height: 16),
+                                  SizedBox(height: 16),
                                   GestureDetector(
                                     onTap: value.like,
                                     child: Icon(
@@ -152,24 +147,24 @@ class HomeScreen extends StatelessWidget {
                                       size: 32,
                                     ),
                                   ),
-                                  const SizedBox(height: 8),
+                                  SizedBox(height: 8),
                                   Text(
                                     "12k",
                                     style: style12.copyWith(color: whiteColor),
                                   ),
-                                  const SizedBox(height: 16),
-                                  const Icon(
+                                  SizedBox(height: 16),
+                                  Icon(
                                     Icons.comment,
                                     color: whiteColor,
                                     size: 32,
                                   ),
-                                  const SizedBox(height: 8),
+                                  SizedBox(height: 8),
                                   Text(
                                     "786",
                                     style: style12.copyWith(color: whiteColor),
                                   ),
-                                  const SizedBox(height: 16),
-                                  const Icon(
+                                  SizedBox(height: 16),
+                                  Icon(
                                     Icons.share,
                                     color: whiteColor,
                                     size: 32,

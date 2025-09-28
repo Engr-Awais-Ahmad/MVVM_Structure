@@ -5,15 +5,18 @@ import 'package:mvvm_app/core/constant/colors.dart';
 import 'package:mvvm_app/core/constant/text_style.dart';
 
 class CustomButton extends StatelessWidget {
-  VoidCallback? onTap;
-  String? text;
-  Color? boxColor;
-  Color? textColor;
-  CustomButton({
+  final VoidCallback? onTap;
+  final String? text;
+  final Color? boxColor;
+  final Color? textColor;
+  final String? assetImage;
+
+  const CustomButton({
     super.key,
     this.boxColor,
     this.text,
     this.textColor,
+    this.assetImage,
     required this.onTap,
   });
 
@@ -23,15 +26,30 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         decoration: BoxDecoration(
           border: Border.all(width: 1, color: greenColor),
           color: boxColor ?? greenColor,
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(16),
         ),
-        child: Text(
-          text ?? "Create Account",
-          style: style16.copyWith(color: textColor ?? whiteColor),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (assetImage != null) ...[
+              Image.asset(
+                assetImage!,
+                height: 28,
+                width: 28,
+                color: greenColor,
+              ),
+              const SizedBox(height: 8),
+            ],
+            Text(
+              text ?? "Button",
+              style: style16.copyWith(color: textColor ?? whiteColor),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );
