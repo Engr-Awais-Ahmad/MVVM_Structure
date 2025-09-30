@@ -3,12 +3,19 @@ import 'package:mvvm_app/core/view_model/base_view_model.dart';
 class SelectInterestViewModel extends BaseViewModel {
   List<String> interests = [
     "Purchasing a Home",
-    "Renting a Property",
-    "Investing in Real Estate",
-    "Learning About Mortgages",
-    "Interior Design",
-    "Property Management",
-    "awais",
+    "Real Estate",
+    "Stocks",
+    "Selling a Home",
+    "Investment Property",
+    "Debt",
+    "Credit",
+    "Insurance",
+    "Loans",
+    "Budgeting",
+    "Mortgages",
+    "Taxes",
+    "Starting your own business",
+    "Credit Cards",
   ];
 
   List<String> selectedInterests = [];

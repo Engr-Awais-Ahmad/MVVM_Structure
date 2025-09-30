@@ -6,10 +6,10 @@ import 'package:mvvm_app/core/models/onboarding_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // ignore: must_be_immutable
-class CustomOnboaring extends StatelessWidget {
+class CustomOnboarding extends StatelessWidget {
   OnbaordingItem onbaordingItem;
 
-  CustomOnboaring({super.key, required this.onbaordingItem});
+  CustomOnboarding({super.key, required this.onbaordingItem});
 
   @override
   Widget build(BuildContext context) {

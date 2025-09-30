@@ -8,14 +8,14 @@ import 'package:mvvm_app/ui/screens/onboarding_screen/onboarding_view_model.dart
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnbaordingScreen extends StatelessWidget {
-  const OnbaordingScreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => OnbaordingViewModel(),
-      child: Consumer<OnbaordingViewModel>(
+      create: (_) => OnboardingViewModel(),
+      child: Consumer<OnboardingViewModel>(
         builder: (context, value, child) => Scaffold(
           body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -30,7 +30,7 @@ class OnbaordingScreen extends StatelessWidget {
                       itemCount: value.items.length,
                       onPageChanged: value.onPageChanged,
                       itemBuilder: (context, index) {
-                        return CustomOnboaring(
+                        return CustomOnboarding(
                           onbaordingItem: value.items[index],
                         );
                       },

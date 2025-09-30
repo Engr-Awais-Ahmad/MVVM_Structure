@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
+import 'package:mvvm_app/ui/screens/onboarding_screen/onboarding_screen.dart';
 import 'package:mvvm_app/ui/screens/select_interest/select_interest_screen.dart';
 
 void main() {

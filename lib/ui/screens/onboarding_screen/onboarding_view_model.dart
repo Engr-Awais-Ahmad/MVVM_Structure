@@ -3,7 +3,7 @@ import 'package:mvvm_app/core/constant/strings.dart';
 import 'package:mvvm_app/core/models/onboarding_model.dart';
 import 'package:mvvm_app/core/view_model/base_view_model.dart';
 
-class OnbaordingViewModel extends BaseViewModel {
+class OnboardingViewModel extends BaseViewModel {
   final PageController pageController = PageController();
   int currentIndex = 0;
 
