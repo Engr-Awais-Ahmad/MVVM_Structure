@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return SliderDrawer(
       key: _drawerKey,
       slideDirection: SlideDirection.rightToLeft,
+      sliderOpenSize: 280,
       appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
 
       ///  Drawer
@@ -36,43 +37,67 @@ class _HomeScreenState extends State<HomeScreen> {
               radius: 60,
               backgroundImage: AssetImage("$staticAssets/obaording1.png"),
             ),
-            Text("Selena Grande", style: style24),
-            Text(
-              "selenagrande@mail.com",
-              style: style24.copyWith(color: greyColor),
+            Center(
+              child: Column(
+                children: [
+                  Text("Selena Grande", style: style24),
+                  Text(
+                    "selenagrande@gmail.com",
+                    style: style24.copyWith(color: greyColor),
+                  ),
+                ],
+              ),
             ),
-            const SizedBox(height: 20),
-            ...List.generate(
-              2,
-              (index) => ListTile(
+            SizedBox(height: 20),
+            ...mainItems.map(
+              (item) => ListTile(
                 leading: CircleAvatar(
                   radius: 20,
-                  child: Image.asset(
-                    "$iconAssets/person-profile-icon.png",
-                    height: 20,
-                  ),
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(item.icon, height: 35),
                 ),
-                title: Text("My Profile", style: style16),
-                trailing: Image.asset(
-                  "$iconAssets/forward-arrow-icon.png",
-                  height: 20,
+                title: Text(item.title, style: style16),
+                trailing: Image.asset(item.trailingIcon, height: 20),
+                onTap: () {},
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Settings",
+              style: style16.copyWith(
+                color: greyColor,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8),
+
+            /// Settings items
+            ...settingsItems.map(
+              (item) => ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset(item.icon, height: 35),
                 ),
+                title: Text(item.title, style: style16),
+                trailing: Image.asset(item.trailingIcon, height: 20),
+                onTap: () {},
               ),
             ),
           ],
         ),
       ),
 
-      /// ✅ Main TikTok-style screen
+      ///  Main TikTok-style screen
       child: ChangeNotifierProvider(
         create: (_) => SavoKidsScreenViewModel(),
         child: Consumer<SavoKidsScreenViewModel>(
           builder: (context, value, _) {
             return Scaffold(
-              backgroundColor: Colors.black,
+              backgroundColor: blackColor,
               body: Stack(
                 children: [
-                  /// ✅ Background Video
+                  /// Background Video
                   Positioned.fill(
                     child: value.isVideoInitialized
                         ? FittedBox(
@@ -88,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   Column(
                     children: [
-                      /// ✅ Header with drawer toggle
+                      ///  Header with drawer
                       Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -109,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 const SizedBox(width: 12),
 
-                                /// ✅ Open/close Drawer here
+                                /// Open/close Drawer here
                                 GestureDetector(
                                   onTap: () {
                                     _drawerKey.currentState?.toggle();
@@ -125,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      /// ✅ Tabs
+                      /// Tabs
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Row(
@@ -161,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(height: 20),
 
-                      /// ✅ Video bottom overlays
+                      ///Video bottom overlays
                       Expanded(
                         child: Stack(
                           children: [
