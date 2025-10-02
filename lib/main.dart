@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-import 'package:mvvm_app/ui/screens/onboarding_screen/onboarding_screen.dart';
-import 'package:mvvm_app/ui/screens/select_interest/select_interest_screen.dart';
+import 'package:mvvm_app/ui/screens/home_screen/home_screen.dart';
 
 void main() {
   runApp(
@@ -41,7 +40,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SelectInterestScreen(),
+      home: HomeScreen(),
     );
   }
 }
