@@ -7,6 +7,8 @@ import 'package:mvvm_app/ui/screens/subscription/plans/subscription_plans_view_m
 import 'package:provider/provider.dart';
 
 class SubscriptionPlansScreen extends StatelessWidget {
+  const SubscriptionPlansScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(

@@ -27,28 +27,30 @@ class _HomeScreenState extends State<HomeScreen> {
       sliderOpenSize: 280,
       appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
 
-      ///  Drawer
+      /// Drawer
       slider: Scaffold(
         backgroundColor: Colors.black,
         body: ListView(
           padding: const EdgeInsets.all(20),
           children: [
-            CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage("$staticAssets/obaording1.png"),
-            ),
+            Image.asset("$staticAssets/drawer-profile.png", fit: BoxFit.cover),
+
+            SizedBox(height: 12),
+
             Center(
               child: Column(
                 children: [
                   Text("Selena Grande", style: style24),
                   Text(
                     "selenagrande@gmail.com",
-                    style: style24.copyWith(color: greyColor),
+                    style: style16.copyWith(color: greyColor),
                   ),
                 ],
               ),
             ),
             SizedBox(height: 20),
+
+            /// Main Items
             ...mainItems.map(
               (item) => ListTile(
                 leading: CircleAvatar(
@@ -61,7 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {},
               ),
             ),
-            SizedBox(height: 20),
+
+            const SizedBox(height: 20),
+
+            /// Section Header
             Text(
               "Settings",
               style: style16.copyWith(
@@ -69,9 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
 
-            /// Settings items
+            /// Settings Items
             ...settingsItems.map(
               (item) => ListTile(
                 leading: CircleAvatar(
@@ -88,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      ///  Main TikTok-style screen
+      /// Main TikTok-style screen
       child: ChangeNotifierProvider(
         create: (_) => SavoKidsScreenViewModel(),
         child: Consumer<SavoKidsScreenViewModel>(
@@ -113,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   Column(
                     children: [
-                      ///  Header with drawer
+                      /// Header with drawer
                       Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -186,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       const SizedBox(height: 20),
 
-                      ///Video bottom overlays
+                      /// Video bottom overlays
                       Expanded(
                         child: Stack(
                           children: [
