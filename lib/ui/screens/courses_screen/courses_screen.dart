@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-
 import 'package:mvvm_app/core/constant/text_style.dart';
 import 'package:mvvm_app/ui/screens/courses_screen/courses_view_model.dart';
 import 'package:provider/provider.dart';

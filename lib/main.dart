@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart'; // 👈 Add this
+import 'package:get/get.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-import 'package:mvvm_app/ui/screens/courses_screen/courses_screen.dart';
-import 'package:mvvm_app/ui/screens/onboarding_screen/onboarding_screen.dart';
-import 'package:mvvm_app/ui/screens/subscription/savo_subscription.dart';
+import 'package:mvvm_app/ui/screens/profile_screen/profile_screen.dart';
 
 void main() {
   runApp(
@@ -27,7 +25,8 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: blackColor,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: CoursesScreen(),
+      home:
+          ProfileScreen(), // 👈 Change this to ProfileScreen() to test the profile screen
     );
   }
 }
