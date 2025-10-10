@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-import 'package:mvvm_app/ui/screens/Videos_screen/your_vidoes_screen.dart';
-import 'package:mvvm_app/ui/screens/profile_screen/profile_screen.dart';
+
+import 'package:mvvm_app/ui/screens/edit_profile_screen/edit_profile_screen.dart';
 
 void main() {
   runApp(
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: blackColor,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: YourVideosScreen(),
+      home: EditProfileScreen(),
     );
   }
 }

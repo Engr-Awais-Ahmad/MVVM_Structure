@@ -58,7 +58,7 @@ class YourVideosScreen extends StatelessWidget {
   // ================= Header =================
   Widget _buildHeader(BuildContext context, YourVideosViewModel model) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start, // 👈 Left align both
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
           onTap: () => model.onBack(context),
@@ -71,7 +71,7 @@ class YourVideosScreen extends StatelessWidget {
             ),
             child: Center(
               child: Image.asset(
-                '$iconAssets/arrow-left-icon.png', // 👈 Asset back icon
+                '$iconAssets/arrow-left-icon.png',
                 width: 18.w,
                 height: 18.w,
                 color: whiteColor,
@@ -102,7 +102,7 @@ class YourVideosScreen extends StatelessWidget {
         prefixIcon: Padding(
           padding: EdgeInsets.all(12.w),
           child: Image.asset(
-            '$iconAssets/search-icon.png', // 👈 asset search icon
+            '$iconAssets/search-icon.png',
             width: 20.w,
             height: 20.w,
             color: const Color(0xff737B80),
@@ -142,7 +142,7 @@ class YourVideosScreen extends StatelessWidget {
                   ),
                   child: Text(
                     video.duration,
-                    style: TextStyle(color: Colors.white, fontSize: 12.sp),
+                    style: TextStyle(color: whiteColor, fontSize: 12.sp),
                   ),
                 ),
               ),
@@ -156,7 +156,7 @@ class YourVideosScreen extends StatelessWidget {
                 Text(
                   video.title,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: whiteColor,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                   ),
