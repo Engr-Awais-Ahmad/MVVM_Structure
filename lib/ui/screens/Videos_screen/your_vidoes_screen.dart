@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mvvm_app/core/constant/auth_field_decoration.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-import 'package:mvvm_app/core/constant/strings.dart'; // 👈 iconAssets path ke liye
+import 'package:mvvm_app/core/constant/strings.dart';
 import 'package:mvvm_app/ui/screens/Videos_screen/your_vidoes_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -57,7 +57,8 @@ class YourVideosScreen extends StatelessWidget {
 
   // ================= Header =================
   Widget _buildHeader(BuildContext context, YourVideosViewModel model) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start, // 👈 Left align both
       children: [
         GestureDetector(
           onTap: () => model.onBack(context),
@@ -70,7 +71,7 @@ class YourVideosScreen extends StatelessWidget {
             ),
             child: Center(
               child: Image.asset(
-                '$iconAssets/arrow-left-icon.png', // 👈 asset icon use kiya
+                '$iconAssets/arrow-left-icon.png', // 👈 Asset back icon
                 width: 18.w,
                 height: 18.w,
                 color: whiteColor,
@@ -78,7 +79,7 @@ class YourVideosScreen extends StatelessWidget {
             ),
           ),
         ),
-        16.horizontalSpace,
+        12.verticalSpace,
         Text(
           'Your Videos',
           style: TextStyle(
@@ -101,7 +102,7 @@ class YourVideosScreen extends StatelessWidget {
         prefixIcon: Padding(
           padding: EdgeInsets.all(12.w),
           child: Image.asset(
-            '$iconAssets/search-icon.png', // 👈 custom search asset
+            '$iconAssets/search-icon.png', // 👈 asset search icon
             width: 20.w,
             height: 20.w,
             color: const Color(0xff737B80),
