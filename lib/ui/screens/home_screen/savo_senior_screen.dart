@@ -9,7 +9,7 @@ import 'package:video_player/video_player.dart';
 import 'savo_senior_screen_view_model.dart';
 
 class SavoSeniorScreen extends StatelessWidget {
-  SavoSeniorScreen({super.key}); // ✅ const hata di
+  SavoSeniorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
