@@ -26,7 +26,7 @@ class EditProfileScreen extends StatelessWidget {
                   children: [
                     20.verticalSpace,
                     _buildCoverPhotoSection(model, context),
-                    60.verticalSpace, // spacing for avatar overlap
+                    60.verticalSpace, 
                     _buildTextField(
                       controller: model.nameController,
                       hint: 'Full Name',
@@ -61,14 +61,14 @@ class EditProfileScreen extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Cover photo container
+       
         GestureDetector(
           onTap: model.onCoverPhotoTap,
           child: Container(
             width: double.infinity,
             height: 150.w,
             decoration: BoxDecoration(
-              color: greyColor, // use your defined greyColor
+              color: greyColor,
             ),
             child: Center(
               child: Column(
@@ -89,7 +89,7 @@ class EditProfileScreen extends StatelessWidget {
             ),
           ),
         ),
-        // Back arrow positioned at top-left
+     
         Positioned(
           top: 10.w,
           left: 10.w,
@@ -112,7 +112,7 @@ class EditProfileScreen extends StatelessWidget {
             ),
           ),
         ),
-        // Profile avatar overlapping bottom center
+       
         Positioned(
           bottom: -45.w,
           left: 0,
@@ -193,7 +193,7 @@ class EditProfileScreen extends StatelessWidget {
       onTap: model.onSave,
       text: "Save Changes",
       boxColor:
-          null, // default color; you can update CustomButton to use linearGradient
+          null, 
       textColor: whiteColor,
       assetImage: null,
     );

@@ -1,11 +1,12 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_app/core/constant/colors.dart';
-
 import 'package:mvvm_app/ui/screens/edit_profile_screen/edit_profile_screen.dart';
 
 void main() {
+  // Firebase.initializeApp();
   runApp(
     ScreenUtilInit(
       designSize: const Size(375, 812),
